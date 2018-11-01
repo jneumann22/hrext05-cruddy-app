@@ -1,0 +1,165 @@
+
+
+/*
+  ========================================
+  Body
+  ========================================
+*/
+
+body {
+  background: #053951;
+  color: #888;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+  color: white;
+  font-size: 22px;
+
+}
+
+/*
+  ========================================
+  Heading
+  ========================================
+*/
+
+h1 {
+
+    
+    color: #edf0f2;
+    display: inline-block;
+    font-size: 44px;
+    
+  }
+
+  .divider {
+    margin-bottom: 20px;
+  }
+
+
+
+
+/*
+  ========================================
+  Inputs
+  ========================================
+*/
+
+.text-input {
+  color: white;
+}
+
+.date-box {
+  padding: 10px;
+}
+
+.location-box {
+  padding: 10px;
+}
+
+.time-box {
+  padding: 10px;
+}
+
+.eventing-box {
+  padding: 10px;
+}
+
+
+/*
+  ========================================
+  main buttons
+  ========================================
+*/
+
+
+  /*.main-buttons {
+   padding-left: 140px;
+   padding-bottom: 5px;
+  }*/
+
+  .add-text-btn {
+    text-align: center;
+    border-radius: 50px;
+  }
+
+  .add-text-btn.active {
+    background-color: white;
+  }
+
+  .add-text-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+  .clear-cache-btn {
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 50px;
+  }
+
+  .clear-cache-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  /*
+  ========================================
+  edit/delete buttons
+  ========================================
+*/
+
+.delete {
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.edit {
+  border-radius: 50px;
+  margin-top: 10px;
+ 
+}
+
+.delete:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.edit:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ 
+}
+
+
+/*
+  ========================================
+  list items
+  ========================================
+*/
+
+
+li {
+  color: white;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.event-holder {
+  overflow-y: auto;
+  height: 400px;
+}
+
+/*
+  ========================================
+  Calendar Icon
+  ========================================
+*/
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+}
+
+
+
+
