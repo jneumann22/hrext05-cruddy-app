@@ -10,40 +10,45 @@ $(document).ready(function(){
   console.log("before\n", window.localStorage);
   
 
-  if (localStorage.length > 0) {
-var storageHolder = []
-Object.keys(localStorage).forEach(function(key){
-   storageHolder.push(JSON.parse(localStorage.getItem(key)));
-});
-
-var allListElements = $( "li" );
-$( "li.item-ii" ).find( allListElements );
-
-
-  }
+if (localStorage.length > 0) {
+    var storageHolder = []
+    Object.keys(localStorage).forEach(function(key){
+      storageHolder.push(JSON.parse(localStorage.getItem(key)));
+  });
+}
 
   origApender = function(array){
-  for (var i = 0; i<array.length; i++){
-      $("#events").append(`<li id = ${JSON.stringify(array[i][3])}> ${array[i][3]} <br> Date: ${array[i][0]} <br> Location: ${array[i][1]} <br> Time: ${array[i][2]} <br> <button class="edit">Edit</button> <button class="delete">Delete</button></li>`)
-      
+    for (var i = 0; i<array.length; i++){
+      $("#events").prepend(`<li id = ${JSON.stringify(array[i][3])}> ${array[i][3]} <br> Date: ${array[i][0]} <br> Location: ${array[i][1]} <br> Time: ${array[i][2]} <br> <button class="edit">Edit</button> <button class="delete">Delete</button></li>`)
     }
   } 
-  if (localStorage.length>0){
-  origApender(storageHolder);
 
-$('.delete').on('click', function(){
+  if (localStorage.length>0){
+    origApender(storageHolder);
+
+    $('.delete').on('click', function(){
       $(this).parent().remove();
       localStorage.removeItem(this.parentElement.id)
     });
+
+    $(".edit").on("click", function(){
+      $(this).parent().remove();
+        var handler = JSON.parse(localStorage[this.parentElement.id])
+      
+
+       $("#datepicker").val(handler[0]);
+        $("#location").val(handler[1]);
+        $("#timepicker").val(handler[2]);
+        $("#event-title").val(handler[3]);
+      
+      localStorage.removeItem(this.parentElement.id);
+    });
+    
   
 };
 
 
   
-
-
-
-
 
 
   // add event listener
@@ -66,14 +71,14 @@ $('.delete').on('click', function(){
   }
     $('.delete').on('click', function(){
       $(this).parent().remove();
-      localStorage.removeItem(curKeyValue)
+      localStorage.removeItem(this.parentElement.id)
     });
 
     
 
     $(".edit").on("click", function(){
       $(this).parent().remove();
-        var handler = JSON.parse(localStorage[curKeyValue])
+        var handler = JSON.parse(localStorage[this.parentElement.id])
       
 
        $("#datepicker").val(handler[0]);
@@ -81,7 +86,7 @@ $('.delete').on('click', function(){
         $("#timepicker").val(handler[2]);
         $("#event-title").val(handler[3]);
       
-      localStorage.removeItem(curKeyValue);
+      localStorage.removeItem(this.parentElement.id);
     });
 
 
