@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HREXT05 Cruddy App</title>
+    <title>My Planner</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="app.js"></script>
@@ -10,22 +10,86 @@
     $( "#datepicker" ).datepicker();
   } );
   </script>
+
+  <script>
+    $(function() {
+    $('#timepicker').timepicker({
+    showPeriod: true,
+    showLeadingZero: true
+});
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400">
+    
   </head>
   <body>
+    <!-- Header -->
+    <div class = "row">
+      <div class = "left-align push-s1 col s6">
+    <h1 class = "right-align">My Planner</h1>
+    </div>
+    <div class = "right-align push-s4 col s1">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN8SURBVGhD7ZZfSFNhGMa9ruuoXNoZdBMh1EUXXWRgF1EgpldBEBYlFEmi2U1qy5wWgahtJyOJJE1LyW1JNnXW3J/CiqmkJnMuKCWo/LOdCtzF13nH5/EMXnbOGXrOwD3wA7fzfM/7PvMcZ1pKKaW0MbIMuUstQx5vj8Ntstk+bqFvK5bdbt9qcbjN0axBbwl9Wx31DHmO8oPJGu5qekmxehyeGnGW1eHJoZc2XvwnWC4ezmOjlxSLz3oZk8Vn00vrJ8YUytabw816c+gVYw4NrHKla9ovHl7f6/spvq4EOCvOgmzxdZitZ8P39WzoMF1LmRhz2MgHEIzznQFhMGC0jqM+ORitYzFZkI35opjDym7h3Sx3HA0CzGFSyI7EDK9u9xCmaRH3x4FpXIieFWdBNszA/ADDcsfomtLif42dWAiQUfednKl3xQyvbnOR9Iop1B8P3fWp6FlxFmTDDMwPMGzoKV1TWgwbdmEhgM4wQ07dHY4ZXtXqIjuv+lB/POBMVas7JguydTdnUD8Au9E1pRWvSObtOZJV5iTdg2vDc4388Mpp1B8PXcUXklfrFHK6BjxkX6mTZNyZR/3AuhUB0q+NkwPlTnK2wUVybjjJ9uL3hLm3hHrjAWfgLGRA1n4+E7Ix7yrrWgQexsy6b9FPdNetIP96GffJwbQczYAsyIz3oAOKimS1cBNYSDIAu9E1pZXdxi1jIckA7EbXlNZpKzd34tkfkozAbnRNafXPRlwDsxGSjMBudE1ppYqoQKpIsqFKkdeBFWKZ/CcL8GIZUqhSxDT8m2y78FYW4MUypEi6Is3uBTRDClWKdPg4cu6RHyWndlQosbfsXXLfWvE4UuMTilxuD6IeOWha5KF3SSihuzhMXkz8RX1y0LRIfsOEUKSgaRL1yEWzIh2jHNlR5BSKPPAuoj65aFaksMUvlDhk+IR6lKBJEfjiY4rdQhGDbQ71KUGTIiUdX4USe0q8pM+f2J9cMaoXge8J+L5YLVL0OID6lKJ6EUPvvFACHvbOMQ71KUX1IgcrPwhFcus/o55EULVI45tfQgkAXmO+RFC1SF3fD+F/rEtPZlFPoqhaZCPZrEVWurGQ5GDlOV1TWv0zkQI8RHsGg5GTdE156g9EmrEgLeFvK5aup0z2YCQfbjM+YIQP+qgFMJvfoYv/OY+ulVJKKW1epaX9B4YNbrEyM9itAAAAAElFTkSuQmCC">
+    </div>
+    </div>
+    <div class = "divider"></div>
     
-    <button class="add-text-btn">Add Event</button>
-    <button class="clear-cache-btn">Clear All Events</button>
-    
+  
 
-    <input type="text" class="text-input" id="datepicker" placeholder="Date">
-    <input type="text" class="text-input" id="location" placeholder="Location">
-    <input type="text" class="text-input" id="time" placeholder="Time">
-    <input type = "text" class ="text-input" id="event-title" placeholder="Event Title">
-    <div class="show-text"></div>
-    <ul id="events">
+<!-- Main Buttons -->
+    <div class = "row">
+    <div class = "main-buttons offset-s2 col s5">
+    <button class="add-text-btn z-depth-2">Add Event</button>
+    <button class="clear-cache-btn z-depth-2">Clear All Events</button>
+    </div>
+
+ 
+  </div>
+
+<!-- Event Holder Box + List Items -->
+
+<div class = "row">
+
+   <div class = "event-holder z-depth-2 push-s6 col s4">
+  <p class = "center-align"> Upcoming Events </p>
+ <div class = "unordered-lists">
+    <ul id="events" class = "left-align">
 
 
     </ul>
+  </div>
+</div>
+
+<!-- Input Elements -->
+  
+
+<div class = "input-box pull-s2 col s2">
+  <div class="eventing-box">
+    <input type = "text" class ="text-input" id="event-title" placeholder="Event Title">
+  </div>
+    <div class = "date-box">
+    <input type="text" class="text-input" id="datepicker" placeholder="Date (Click to Choose)">
+  </div>
+  <div class = "location-box">
+    <input type="text" class="text-input" id="location" placeholder="Location">
+  </div>
+ 
+  <div class = "time-box">
+    <input type="text" class="text-input" id="timepicker" placeholder="Time (Click to Choose)">
+  </div>
+  </div>
+
+
+</div>
+
+
+  
+
+
   </body>
 </html>
